@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coca-Cola Proposal | Gusto Italian</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --coke-red: #E61D2B;
+      --coke-red-dark: #B71C1C;
+      --coke-red-light: #FCE4E6;
+      --ink: #1a1a1a;
+      --text: #333;
+      --muted: #6b6b6b;
+      --bg: #f7f5f2;
+      --card: #ffffff;
+      --border: #ececec;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============ HERO HEADER ============ */
+    .hero {
+      background: linear-gradient(135deg, var(--coke-red) 0%, var(--coke-red-dark) 100%);
+      color: white;
+      padding: 48px 0 96px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0,0,0,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .hero-logo {
+      width: 100px;
+      height: 100px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .hero-text { flex: 1; }
+
+    .hero-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .hero-meta {
+      font-size: 15px;
+      opacity: 0.9;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ============ MAIN CONTENT ============ */
+    .main {
+      margin-top: -64px;
+      position: relative;
+      z-index: 3;
+      padding-bottom: 80px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--coke-red);
+    }
+
+    .card-header .icon {
+      width: 40px;
+      height: 40px;
+      background: var(--coke-red-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--coke-red);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .card-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ============ INTRO TEXT ============ */
+    .intro p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .intro p.highlight {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+      padding: 20px 24px;
+      background: var(--coke-red-light);
+      border-left: 4px solid var(--coke-red);
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+    }
+
+    /* ============ FOUNTAIN BRANDS ============ */
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+
+    .brand-card {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+      aspect-ratio: 1;
+    }
+
+    .brand-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(230,29,43,0.15);
+      border-color: var(--coke-red);
+    }
+
+    .brand-card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    /* ============ BOTTLES SECTION ============ */
+    .bottles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 12px;
+      align-items: end;
+    }
+
+    .bottle-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      min-height: 180px;
+      transition: all 0.25s ease;
+    }
+
+    .bottle-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .bottle-card img {
+      max-width: 100%;
+      max-height: 140px;
+      object-fit: contain;
+    }
+
+    /* ============ TWO COLUMN ============ */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    /* ============ TABLES ============ */
+    .table-wrap {
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    table thead th {
+      background: linear-gradient(135deg, var(--coke-red), var(--coke-red-dark));
+      color: white;
+      padding: 14px 16px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    table tbody td {
+      padding: 12px 16px;
+      border-top: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    table tbody tr {
+      transition: background 0.15s;
+    }
+
+    table tbody tr:hover {
+      background: #fafafa;
+    }
+
+    table tbody tr.total {
+      background: var(--coke-red-light);
+      font-weight: 700;
+      color: var(--coke-red-dark);
+      font-size: 15px;
+    }
+
+    table tbody tr.total td {
+      border-top: 2px solid var(--coke-red);
+    }
+
+    .num {
+      font-variant-numeric: tabular-nums;
+      font-weight: 500;
+    }
+
+    /* ============ STATS BAR ============ */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .stat {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      border-top: 3px solid var(--coke-red);
+    }
+
+    .stat-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--coke-red);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ============ CTA SECTION ============ */
+    .cta {
+      background: linear-gradient(135deg, var(--ink) 0%, #2a2a2a 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(230,29,43,0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cta-bear {
+      width: 120px;
+      height: 160px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-bear img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .cta-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .cta-text p {
+      opacity: 0.85;
+      font-size: 15px;
+    }
+
+    /* ============ FOOTER ============ */
+    .footer {
+      text-align: center;
+      padding: 32px 0;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ============ PROFIT TABLE ============ */
+    .profit-table .pos {
+      color: #1b8a3a;
+      font-weight: 600;
+    }
+    .profit-table tr.highlight-row {
+      background: linear-gradient(90deg, #fff4e6 0%, #ffe9cc 100%);
+    }
+    .profit-table tr.highlight-row:hover {
+      background: linear-gradient(90deg, #ffe9cc 0%, #ffd9a8 100%);
+    }
+
+    /* ============ CALCULATOR ============ */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .calc-input {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .calc-input label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .calc-input input {
+      padding: 10px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .calc-input input:focus {
+      outline: none;
+      border-color: var(--coke-red);
+      box-shadow: 0 0 0 3px rgba(230,29,43,0.12);
+    }
+
+    .calc-input small {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .calc-results {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      padding: 20px;
+      background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+      border-radius: 12px;
+    }
+
+    .result-card {
+      background: white;
+      padding: 18px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .result-card.big {
+      background: linear-gradient(135deg, var(--coke-red) 0%, var(--coke-red-dark) 100%);
+      color: white;
+      grid-column: span 1;
+    }
+
+    .result-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .result-card.big .result-label {
+      color: rgba(255,255,255,0.85);
+    }
+
+    .result-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--coke-red);
+      line-height: 1;
+    }
+
+    .result-card.big .result-value {
+      color: white;
+      font-size: 32px;
+    }
+
+    .result-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 6px;
+    }
+
+    .rebate-status {
+      margin-top: 18px;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .rebate-status.good {
+      background: #e6f7ec;
+      border-left: 4px solid #1b8a3a;
+      color: #145d28;
+    }
+
+    .rebate-status.partial {
+      background: #fff8e1;
+      border-left: 4px solid #f5b400;
+      color: #7a5a00;
+    }
+
+    .rebate-status.low {
+      background: #fde8ea;
+      border-left: 4px solid var(--coke-red);
+      color: var(--coke-red-dark);
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 900px) {
+      .hero-title { font-size: 40px; }
+      .two-col { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 24px; }
+      .cta { flex-direction: column; text-align: center; padding: 32px; }
+      .calc-grid { grid-template-columns: repeat(2, 1fr); }
+      .calc-results { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .hero-content { flex-direction: column; text-align: center; }
+      .hero-title { font-size: 32px; }
+      .stats { grid-template-columns: 1fr; }
+      .hero-meta { justify-content: center; }
+      .calc-grid { grid-template-columns: 1fr; }
+      .calc-results { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-logo">
+          <img src="images/img_10_Picture_10.png" alt="Reyes Coca-Cola Bottling">
+        </div>
+        <div class="hero-text">
+          <div class="hero-eyebrow">Beverage Partnership Proposal</div>
+          <h1 class="hero-title">Gusto Italian</h1>
+          <div class="hero-meta">
+            <span>📅 May 20th, 2026</span>
+            <span>📋 5-Year Contract</span>
+            <span>🏷️ Reyes Coca-Cola Bottling</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main">
+    <div class="container">
+
+      <!-- Quick stats -->
+      <section class="stats">
+        <div class="stat">
+          <div class="stat-value">$2,500</div>
+          <div class="stat-label">Sign-On Bonus</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">$2.00</div>
+          <div class="stat-label">Per-Case Rebate</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">5 yrs</div>
+          <div class="stat-label">Contract Length</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">$20,050</div>
+          <div class="stat-label">Total Investment</div>
+        </div>
+      </section>
+
+      <!-- Intro -->
+      <section class="card intro">
+        <div class="card-header">
+          <div class="icon">★</div>
+          <div>
+            <div class="card-title">Our Proposal</div>
+            <div class="card-subtitle">A partnership built on Coca-Cola's #1 brands</div>
+          </div>
+        </div>
+        <p class="highlight">
+          We are excited to offer <strong>Gusto Italian</strong> a 5-year contract with our #1 brands, complete with exclusive pricing for all bottle-to-go ordering.
+        </p>
+        <p>
+          This includes a <strong>rebate offer of $2.00</strong> on every 24ct case of bottles and every gallon of bag-in-box purchased from Coca-Cola or authorized distributor. Gusto Italian will have a volume requirement of <strong>750 bottles and gallons annually</strong> to receive the $2.00 rebate. If Gusto Italian buys between 500–749 bottles and gallons, they will receive a $1.00 rebate.
+        </p>
+        <p>
+          In addition, Coca-Cola will include a <strong>$2,500 sign-on bonus</strong> to be used at your discretion. Please connect with your Account Manager for additional information regarding the best option for Gusto Italian.
+        </p>
+        <p>
+          On behalf of Coca-Cola, we thank you for your business and look forward to this partnership as Gusto Italian's preferred beverage brand.
+        </p>
+      </section>
+
+      <!-- Fountain Brands -->
+      <section class="card">
+        <div class="card-header">
+          <div class="icon">🥤</div>
+          <div>
+            <div class="card-title">Fountain Brands</div>
+            <div class="card-subtitle">Our complete fountain beverage lineup</div>
+          </div>
+        </div>
+        <div class="brand-grid">
+          <div class="brand-card"><img src="images/img_13_Picture_2.png" alt="Coca-Cola"></div>
+          <div class="brand-card"><img src="images/img_14_Picture_4.png" alt="Coca-Cola Zero"></div>
+          <div class="brand-card"><img src="images/img_15_Picture_6.png" alt="Diet Coke"></div>
+          <div class="brand-card"><img src="images/img_16_Picture_8.png" alt="Sprite"></div>
+          <div class="brand-card"><img src="images/img_21_Picture_2.png" alt="Hi-C"></div>
+          <div class="brand-card"><img src="images/img_17_Picture_12.png" alt="Fanta"></div>
+          <div class="brand-card"><img src="images/img_18_Picture_16.png" alt="Barq's Root Beer"></div>
+          <div class="brand-card"><img src="images/img_19_Picture_10.png" alt="Mello Yello"></div>
+          <div class="brand-card"><img src="images/img_20_Picture_18.png" alt="Brand"></div>
+          <div class="brand-card"><img src="images/img_33_Picture_2.png" alt="Brand"></div>
+          <div class="brand-card" style="background:#f0f0f0;"><img src="images/img_22_Picture_50.png" alt="Fountain Machine"></div>
+        </div>
+      </section>
+
+      <!-- Bottles-to-Go -->
+      <section class="card">
+        <div class="card-header">
+          <div class="icon">🍾</div>
+          <div>
+            <div class="card-title">Bottles-to-Go &mdash; Packaging &amp; Flavors</div>
+            <div class="card-subtitle">Premium bottled beverages for your guests</div>
+          </div>
+        </div>
+        <div class="bottles-grid">
+          <div class="bottle-card"><img src="images/img_31_Picture_4.jpg" alt="Cup"></div>
+          <div class="bottle-card"><img src="images/img_24_Picture_24.jpg" alt="Coca-Cola Bottle"></div>
+          <div class="bottle-card"><img src="images/img_25_Picture_57.png" alt="Dasani"></div>
+          <div class="bottle-card"><img src="images/img_26_Picture_58.png" alt="Smart Water"></div>
+          <div class="bottle-card"><img src="images/img_28_Picture_6.png" alt="Body Armor"></div>
+          <div class="bottle-card"><img src="images/img_0_Picture_18.png" alt="Powerade"></div>
+          <div class="bottle-card"><img src="images/img_27_Picture_14.jpg" alt="Mexican Coke"></div>
+          <div class="bottle-card"><img src="images/img_29_Picture_16.png" alt="Gold Peak Tea"></div>
+          <div class="bottle-card"><img src="images/img_30_Picture_12.png" alt="Core Power"></div>
+          <div class="bottle-card"><img src="images/img_1_Picture_14.jpg" alt="Monster Energy"></div>
+          <div class="bottle-card"><img src="images/img_34_Picture_4.jpg" alt="Dunkin Coffee"></div>
+          <div class="bottle-card"><img src="images/img_35_Picture_6.jpg" alt="Fairlife Milk"></div>
+        </div>
+      </section>
+
+      <!-- Tables side by side -->
+      <section class="card">
+        <div class="card-header">
+          <div class="icon">$</div>
+          <div>
+            <div class="card-title">Investment &amp; Pricing</div>
+            <div class="card-subtitle">Proposed offer breakdown and exclusive pricing</div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <!-- Proposed Offer Table -->
+          <div>
+            <h3 style="font-family:'Playfair Display',serif; font-size:18px; margin-bottom:12px; color:var(--ink);">Proposed Offer</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th class="num">$/Year</th>
+                    <th class="num">Qty</th>
+                    <th class="num">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sign-on Bonus</td>
+                    <td class="num">$2,500</td>
+                    <td class="num">&mdash;</td>
+                    <td class="num">$2,500</td>
+                  </tr>
+                  <tr>
+                    <td>Rebate Offer (BIBs $2.00)</td>
+                    <td class="num">$1,500</td>
+                    <td class="num">750</td>
+                    <td class="num">$7,500</td>
+                  </tr>
+                  <tr>
+                    <td>Marketing (tumblers, signage)</td>
+                    <td class="num">&mdash;</td>
+                    <td class="num">&mdash;</td>
+                    <td class="num">$2,000</td>
+                  </tr>
+                  <tr>
+                    <td>Equipment Investment/Service</td>
+                    <td class="num">&mdash;</td>
+                    <td class="num">&mdash;</td>
+                    <td class="num">$8,050</td>
+                  </tr>
+                  <tr class="total">
+                    <td>Total Investment</td>
+                    <td class="num">&mdash;</td>
+                    <td class="num">&mdash;</td>
+                    <td class="num">$20,050</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Exclusive Pricing Table -->
+          <div>
+            <h3 style="font-family:'Playfair Display',serif; font-size:18px; margin-bottom:12px; color:var(--ink);">Exclusive Pricing</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th class="num">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>20 oz Sparkling Soft Drinks</td><td class="num">$34.25</td></tr>
+                  <tr><td>20 oz Dasani</td><td class="num">$17.95</td></tr>
+                  <tr><td>20 oz Smart Water</td><td class="num">$34.94</td></tr>
+                  <tr><td>20 oz Powerade</td><td class="num">$32.83</td></tr>
+                  <tr><td>16 oz Body Armor</td><td class="num">$22.83</td></tr>
+                  <tr><td>16 oz Monster Energy</td><td class="num">$46.69</td></tr>
+                  <tr><td>355 ml Mexican Coke</td><td class="num">$39.12</td></tr>
+                  <tr><td>18.5 oz Gold Peak Tea</td><td class="num">$22.56</td></tr>
+                  <tr><td>13.7 oz Dunkin Donuts Coffee</td><td class="num">$28.80</td></tr>
+                  <tr><td>14 oz Fairlife Milk</td><td class="num">$24.48</td></tr>
+                  <tr><td>2.5 Gallon BIB</td><td class="num">$70.57</td></tr>
+                  <tr><td>5 Gallon BIB</td><td class="num">$132.04</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROFIT BREAKDOWN ============ -->
+      <section class="card">
+        <div class="card-header">
+          <div class="icon">📊</div>
+          <div>
+            <div class="card-title">Cost vs. Menu Price vs. Profit</div>
+            <div class="card-subtitle">What you pay, what you charge, what you keep (industry standard 3x–5x markup)</div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="profit-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th class="num">Your Cost</th>
+                <th class="num">Suggested Menu Price</th>
+                <th class="num">Profit / Sale</th>
+                <th class="num">Markup</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Bottled Coke / Sprite (20 oz)</td><td class="num">$1.43</td><td class="num">$3.50 – $4.50</td><td class="num pos">+$2.07 – $3.07</td><td class="num">~245%</td></tr>
+              <tr><td>Mexican Coke (355 ml glass)</td><td class="num">$1.63</td><td class="num">$4.00 – $5.00</td><td class="num pos">+$2.37 – $3.37</td><td class="num">~245%</td></tr>
+              <tr><td>Dasani Water (20 oz)</td><td class="num">$0.75</td><td class="num">$2.50 – $3.50</td><td class="num pos">+$1.75 – $2.75</td><td class="num">~370%</td></tr>
+              <tr><td>Smart Water (20 oz)</td><td class="num">$1.46</td><td class="num">$3.50 – $4.50</td><td class="num pos">+$2.04 – $3.04</td><td class="num">~240%</td></tr>
+              <tr><td>Powerade (20 oz)</td><td class="num">$1.37</td><td class="num">$3.50 – $4.50</td><td class="num pos">+$2.13 – $3.13</td><td class="num">~255%</td></tr>
+              <tr><td>Body Armor (16 oz)</td><td class="num">$0.95</td><td class="num">$3.50 – $4.50</td><td class="num pos">+$2.55 – $3.55</td><td class="num">~370%</td></tr>
+              <tr><td>Monster Energy (16 oz)</td><td class="num">$1.95</td><td class="num">$4.50 – $5.50</td><td class="num pos">+$2.55 – $3.55</td><td class="num">~230%</td></tr>
+              <tr><td>Gold Peak Tea (18.5 oz)</td><td class="num">$0.94</td><td class="num">$3.00 – $4.00</td><td class="num pos">+$2.06 – $3.06</td><td class="num">~320%</td></tr>
+              <tr><td>Dunkin Coffee (13.7 oz)</td><td class="num">$1.20</td><td class="num">$3.50 – $4.50</td><td class="num pos">+$2.30 – $3.30</td><td class="num">~290%</td></tr>
+              <tr><td>Fairlife Milk (14 oz)</td><td class="num">$1.02</td><td class="num">$3.00 – $3.50</td><td class="num pos">+$1.98 – $2.48</td><td class="num">~290%</td></tr>
+              <tr class="highlight-row"><td><strong>Fountain Drink (medium)</strong> 🔥</td><td class="num">$0.21</td><td class="num">$3.00 – $4.00</td><td class="num pos"><strong>+$2.79 – $3.79</strong></td><td class="num"><strong>~1,400%</strong></td></tr>
+              <tr class="highlight-row"><td><strong>Fountain Drink (large)</strong> 🔥</td><td class="num">$0.30</td><td class="num">$3.50 – $4.50</td><td class="num pos"><strong>+$3.20 – $4.20</strong></td><td class="num"><strong>~1,300%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:16px; padding:14px 18px; background:#fffbea; border-left:4px solid #f5b400; border-radius:0 8px 8px 0; font-size:14px;">
+          <strong>💡 Pro tip:</strong> Fountain drinks have the highest margin in your restaurant. A 5-gallon bag-in-box ($132.04) makes ~640 medium drinks for about <strong>21¢ per cup</strong>. Push fountain over bottled when possible.
+        </p>
+      </section>
+
+      <!-- ============ PROFIT CALCULATOR ============ -->
+      <section class="card calculator">
+        <div class="card-header">
+          <div class="icon">🧮</div>
+          <div>
+            <div class="card-title">Profit Calculator</div>
+            <div class="card-subtitle">Estimate your earnings — adjust the inputs to see live results</div>
+          </div>
+        </div>
+
+        <div class="calc-grid">
+          <div class="calc-input">
+            <label>Bottled drinks sold per day</label>
+            <input type="number" id="bottlesPerDay" value="30" min="0">
+            <small>Avg across all bottle types</small>
+          </div>
+          <div class="calc-input">
+            <label>Avg menu price per bottle ($)</label>
+            <input type="number" id="bottlePrice" value="4.00" min="0" step="0.25">
+            <small>Your selling price</small>
+          </div>
+          <div class="calc-input">
+            <label>Fountain drinks sold per day</label>
+            <input type="number" id="fountainPerDay" value="80" min="0">
+            <small>Including refills</small>
+          </div>
+          <div class="calc-input">
+            <label>Avg menu price per fountain ($)</label>
+            <input type="number" id="fountainPrice" value="3.50" min="0" step="0.25">
+            <small>Your selling price</small>
+          </div>
+          <div class="calc-input">
+            <label>Days open per week</label>
+            <input type="number" id="daysOpen" value="7" min="1" max="7">
+            <small>Operating days</small>
+          </div>
+          <div class="calc-input">
+            <label>Avg bottle wholesale cost ($)</label>
+            <input type="number" id="bottleCost" value="1.25" min="0" step="0.05">
+            <small>From Coca-Cola</small>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <div class="result-card">
+            <div class="result-label">Daily Profit</div>
+            <div class="result-value" id="dailyProfit">$0</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Monthly Profit</div>
+            <div class="result-value" id="monthlyProfit">$0</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Annual Profit</div>
+            <div class="result-value" id="annualProfit">$0</div>
+          </div>
+          <div class="result-card big">
+            <div class="result-label">5-Year Profit + Coca-Cola Bonuses</div>
+            <div class="result-value" id="fiveYearProfit">$0</div>
+            <div class="result-sub" id="bonusBreakdown">incl. $2,500 sign-on + rebates</div>
+          </div>
+        </div>
+
+        <div id="rebateStatus" class="rebate-status"></div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <div class="cta-bear">
+          <img src="images/img_9_Picture_40.png" alt="Coca-Cola Polar Bear">
+        </div>
+        <div class="cta-text">
+          <h3>Ready to partner with Coca-Cola?</h3>
+          <p>Connect with your Account Manager to lock in this exclusive 5-year offer and start enjoying premium beverages, rebates, and equipment support for Gusto Italian.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      &copy; 2026 Reyes Coca-Cola Bottling &middot; Confidential Proposal for Gusto Italian
+    </div>
+  </footer>
+
+  <script>
+    // Constants from the Coca-Cola proposal
+    const SIGN_ON_BONUS = 2500;
+    const MARKETING_VALUE = 2000;
+    const EQUIPMENT_VALUE = 8050;
+    const REBATE_PER_CASE_FULL = 2.00;   // $2.00 rebate at 750+ cases/gal
+    const REBATE_PER_CASE_PARTIAL = 1.00; // $1.00 rebate at 500-749
+    const REBATE_THRESHOLD_FULL = 750;
+    const REBATE_THRESHOLD_PARTIAL = 500;
+    const FOUNTAIN_COST_PER_DRINK = 0.21; // ~21 cents per medium fountain drink
+    const BOTTLES_PER_CASE = 24;
+    const FOUNTAIN_DRINKS_PER_GALLON = 128; // ~128 drinks per gallon of BIB
+
+    const fmt = n => '$' + Math.round(n).toLocaleString();
+    const fmtCents = n => '$' + n.toFixed(2);
+
+    function calculate() {
+      const bottlesPerDay  = +document.getElementById('bottlesPerDay').value || 0;
+      const bottlePrice    = +document.getElementById('bottlePrice').value || 0;
+      const fountainPerDay = +document.getElementById('fountainPerDay').value || 0;
+      const fountainPrice  = +document.getElementById('fountainPrice').value || 0;
+      const daysOpen       = +document.getElementById('daysOpen').value || 7;
+      const bottleCost     = +document.getElementById('bottleCost').value || 0;
+
+      // Daily revenue and cost
+      const dailyBottleRev   = bottlesPerDay * bottlePrice;
+      const dailyBottleCost  = bottlesPerDay * bottleCost;
+      const dailyFountainRev = fountainPerDay * fountainPrice;
+      const dailyFountainCost= fountainPerDay * FOUNTAIN_COST_PER_DRINK;
+
+      const dailyRev    = dailyBottleRev + dailyFountainRev;
+      const dailyCost   = dailyBottleCost + dailyFountainCost;
+      const dailyProfit = dailyRev - dailyCost;
+
+      // Scale up (operating days/week)
+      const weeklyProfit  = dailyProfit * daysOpen;
+      const monthlyProfit = weeklyProfit * 4.33;
+      const annualProfit  = weeklyProfit * 52;
+
+      // Annual volumes for rebate qualification
+      const annualBottleCases   = (bottlesPerDay * daysOpen * 52) / BOTTLES_PER_CASE;
+      const annualFountainGals  = (fountainPerDay * daysOpen * 52) / FOUNTAIN_DRINKS_PER_GALLON;
+      const annualVolumeUnits   = annualBottleCases + annualFountainGals;
+
+      // Rebate calculation
+      let annualRebate = 0;
+      let rebateMessage = '';
+      let rebateClass = 'low';
+      if (annualVolumeUnits >= REBATE_THRESHOLD_FULL) {
+        annualRebate = annualVolumeUnits * REBATE_PER_CASE_FULL;
+        rebateMessage = `✅ <strong>Great!</strong> At ${Math.round(annualVolumeUnits)} cases/gallons per year, you qualify for the <strong>full $2.00 rebate</strong> = ${fmt(annualRebate)}/year (${fmt(annualRebate*5)} over 5 years).`;
+        rebateClass = 'good';
+      } else if (annualVolumeUnits >= REBATE_THRESHOLD_PARTIAL) {
+        annualRebate = annualVolumeUnits * REBATE_PER_CASE_PARTIAL;
+        const needed = REBATE_THRESHOLD_FULL - annualVolumeUnits;
+        rebateMessage = `⚠️ At ${Math.round(annualVolumeUnits)} cases/gallons/year, you qualify for the <strong>$1.00 rebate</strong> = ${fmt(annualRebate)}/year. You're ${Math.round(needed)} units short of the $2.00 tier.`;
+        rebateClass = 'partial';
+      } else {
+        rebateMessage = `❌ At ${Math.round(annualVolumeUnits)} cases/gallons/year, you don't yet qualify for rebates. You need at least 500 to start earning $1.00/unit back.`;
+        rebateClass = 'low';
+      }
+
+      // 5-year totals: profit + sign-on + rebates + marketing + equipment value
+      const fiveYearProfit = annualProfit * 5;
+      const totalBonuses   = SIGN_ON_BONUS + (annualRebate * 5) + MARKETING_VALUE + EQUIPMENT_VALUE;
+      const grandTotal     = fiveYearProfit + totalBonuses;
+
+      // Update UI
+      document.getElementById('dailyProfit').textContent   = fmt(dailyProfit);
+      document.getElementById('monthlyProfit').textContent = fmt(monthlyProfit);
+      document.getElementById('annualProfit').textContent  = fmt(annualProfit);
+      document.getElementById('fiveYearProfit').textContent= fmt(grandTotal);
+      document.getElementById('bonusBreakdown').innerHTML  =
+        `Beverage profit: ${fmt(fiveYearProfit)} + Coca-Cola bonuses: ${fmt(totalBonuses)}`;
+
+      const status = document.getElementById('rebateStatus');
+      status.className = 'rebate-status ' + rebateClass;
+      status.innerHTML = rebateMessage;
+    }
+
+    // Wire up inputs
+    document.querySelectorAll('.calc-input input').forEach(input => {
+      input.addEventListener('input', calculate);
+    });
+
+    // Initial calc
+    calculate();
+  </script>
+
+</body>
+</html>
